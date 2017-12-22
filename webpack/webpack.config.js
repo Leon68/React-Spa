@@ -15,7 +15,7 @@ module.exports = {
   },
 
   // 引用但不打包的文件
-  externals: { 'react': 'React', 'react-dom': 'ReactDOM' },
+  //externals: { 'react': 'React', 'react-dom': 'ReactDOM' },
 
   plugins: [
 

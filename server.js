@@ -5,13 +5,24 @@ const Router = require('koa-router')
 const app = new Koa() 
 const router = new Router() 
 
+const webpack = require('webpack')
+const WebpackDevServer = require('webpack-dev-server')
+const config = require('./webpack/webpack.dev.config')
+
+
+const DEVPORT = 3001
+
+
+
 router.get('/',async function(ctx){
   await send(ctx,'demo/index.html')
 })
-router.get('/app.js',async function(ctx){
+/*router.get('/app.js',async function(ctx){
   await send(ctx,'build/app.js')
+})*/
+router.get('**/*.js(on)?', async function (ctx) {
+  ctx.redirect(`http://localhost:${DEVPORT}/${ctx.path}`)
 })
-
 
 
 router.get('**/react.min.js',async function(ctx){
@@ -29,4 +40,17 @@ app.listen(3000,function(){
 })
 
 
+new WebpackDevServer(webpack(config), {
+    publicPath: config.output.publicPath,
+    hot: true,
+    quiet: false,
+    noInfo: true,
+    stats: {
+        colors: true
+    }
+}).listen(DEVPORT, 'localhost',function (err,result){
+    if(err) {
+        return console.log(err)
+    }
+})
 

@@ -1,5 +1,5 @@
 const path = require('path')
-const webpac = require('webpack')
+const webpack = require('webpack')
 const autoprefixer = require('autoprefixer')
 
 
@@ -23,7 +23,7 @@ module.exports= {
   ],
   resolve: {
     alias: {
-      _: path.resolve(_dirname,'src')
+      _: path.resolve(__dirname,'src')
     },
   },
   module: {

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,UAAW;EACT,KAAK,EAAE,KAAK",
+"sources": ["menu.scss"],
+"names": [],
+"file": "menu.css"
+}

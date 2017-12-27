@@ -3,7 +3,7 @@ const webpack = require('webpack')
 const autoprefixer = require('autoprefixer')
 
 
-module.exports= {
+module.exports = {
   devtool: 'cheap-module-source-map',
   entry: {
     app: [
@@ -17,13 +17,13 @@ module.exports= {
     filename: '[name].js',
     publicPath: '/',
   },
-  //externals: {react: 'React', 'react-dom': 'ReactDOM'},
+  // externals: {react: 'React', 'react-dom': 'ReactDOM'},
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
   ],
   resolve: {
     alias: {
-      _: path.resolve(__dirname,'src')
+      _: path.resolve(__dirname, 'src'),
     },
   },
   module: {
@@ -35,7 +35,7 @@ module.exports= {
           options: {
             babelrc: false,
             presets: [
-              ['es2015',{ modules: false }],
+              ['es2015', { modules: false }],
               'react',
             ],
             plugins: [
@@ -50,7 +50,7 @@ module.exports= {
         test: /\.scss$/,
         use: [
           {
-            loader: 'style-loader'
+            loader: 'style-loader',
           },
           {
             loader: 'css-loader',
@@ -62,7 +62,7 @@ module.exports= {
           {
             loader: 'postcss-loader',
             options: {
-              plugins(){
+              plugins() {
                 return [
                   autoprefixer,
                 ]

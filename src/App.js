@@ -2,10 +2,20 @@ import React ,{Component} from 'react'
 import './styles/index.scss'
 
 
-class App extends React.Component {
+class App extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {}
+    }
+
     render() {
         return (
-            <div>Hello world.</div>
+            <div>
+                <div>Hello world.</div>
+                <p>hhhh</p>
+                <h1>hhhhiiu</h1>
+                <div>Hello world.</div>
+            </div>
         )
     }
 }

@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAAA,UAAW;EACT,KAAK,EAAE,KAAK",
+"mappings": "AAAA,UAAW;EACT,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,KAAK",
 "sources": ["menu.scss"],
 "names": [],
 "file": "menu.css"
